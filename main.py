@@ -60,4 +60,5 @@ with app.app_context():
     print(movies_schema)
 
 if __name__ == '__main__':
+
     app.run()
