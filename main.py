@@ -26,6 +26,7 @@ class Movie(db.Model):
     genre = relationship('Genre')
     director_id = db.Column(db.Integer, db.ForeignKey('director.id'))
     director = relationship('Director')
+    # foreign_keys = 'Order.customer_id')
 
 
 class Director(db.Model):
