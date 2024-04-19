@@ -1,11 +1,11 @@
 from flask import Flask, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_restx import Api, Resource
 from flask_migrate import Migrate
+from flask_restx import Api, Resource
+from flask_sqlalchemy import SQLAlchemy
 from marshmallow import Schema, fields
 from sqlalchemy.orm import relationship
 
-app = Flask('__name__')
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -15,6 +15,8 @@ app.config['DEBUG'] = True
 api = Api(app)
 api.app.config['RESTX_JSON'] = {'ensure_ascii': False, 'indent': 4}
 movies_ns = api.namespace('movies')
+genres_ns = api.namespace('genres')
+directors_ns = api.namespace('directors')
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -38,6 +40,11 @@ class MoviesView(Resource):
 class MoviesView(Resource):
     def get(self, id: int):
         return movie_schema.dump(Movie.query.get(id)), 200
+
+    def delete(self, id: int):
+        Movie.query.filter(id == Movie.id).delete()
+        db.session.commit()
+        return 200
 
 
 class Movie(db.Model):
@@ -78,8 +85,43 @@ class MovieSchema(Schema):
     director_id = fields.Int()
 
 
+class DirectorSchema(Schema):
+    id = fields.Int()
+    name = fields.Str()
+
+
+class GenerSchema(Schema):
+    id = fields.Int(dump_only=True)
+    name = fields.Str()
+
+
 movie_schema = MovieSchema()
 movies_schema = MovieSchema(many=True)
+director_schema = DirectorSchema()
+directors_schema = DirectorSchema(many=True)
+gener_schema = GenerSchema()
+geners_schema = GenerSchema(many=True)
+
+# temp = '{"id": 21, "name": "Тейлор Шеридан"}'
+# print(temp)
+# print(type(temp))
+# temp = director_schema.loads(temp)
+# print(temp)
+# print(type(temp))
+
+@directors_ns.route('/')
+class DirectorsView(Resource):
+    def get(self):
+        return directors_schema.dump(Director.query.all()), 200
+
+    def post(self):
+        temp = request.json
+        new_dir = Director(**temp)
+        db.session.add(new_dir)
+        db.session.commit()
+        return 201
+
+
 with app.app_context():
     all_movies = Movie.query.all()
     movies_schema.dumps(all_movies)
