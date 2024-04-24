@@ -102,12 +102,12 @@ directors_schema = DirectorSchema(many=True)
 gener_schema = GenerSchema()
 geners_schema = GenerSchema(many=True)
 
-# temp = '{"id": 21, "name": "Тейлор Шеридан"}'
-# print(temp)
-# print(type(temp))
-# temp = director_schema.loads(temp)
-# print(temp)
-# print(type(temp))
+temp = '{"id": 21, "name": "Тейлор Шеридан"}'
+print(temp)
+print(type(temp))
+temp = director_schema.loads(temp)
+print(temp)
+print(type(temp))
 
 @directors_ns.route('/')
 class DirectorsView(Resource):

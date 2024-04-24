@@ -68,6 +68,7 @@ class GenreDB(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), nullable=False, unique=True)
 
+
 @movies_ns.route('/')
 class MovieView(Resource):
     def get(self):
@@ -80,6 +81,31 @@ class MovieView(Resource):
         if director_id:
             movies_all = movies_all.filter(director_id == MovieDB.director_id)
         return movies_schema.dump(movies_all.all()), 200
+
+    def post(self):
+        temp_json = request.get_json()
+        # print(temp_json)
+        # print(type(temp_json))
+        temp_json = MoviesSchema().load(temp_json)
+        #  json to json let it stand. maybe will need it
+        # print(temp_json)
+        # print(type(temp_json))
+        db.session.add(MovieDB(**temp_json))
+        db.session.commit()
+        db.session.close()
+        return 201
+
+
+@movies_ns.route('/<int:id>')
+class MoviesView(Resource):
+    def get(self, id: int):
+        return MoviesSchema().dump(MovieDB.query.get(id)), 200
+
+    def delete(self, id: int):
+        MovieDB.query.filter(id == MovieDB.id).delete()
+        db.session.commit()
+        return 200
+
 
 if __name__ == '__main__':
     app.run()
