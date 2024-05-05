@@ -4,36 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed791da9-33fa-4311-8cf5-cd24bac5fb5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject18.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/container.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/director_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/genre_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/model/director_md.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/model/genre_md.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/model/movie_md.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/dao/movie_dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/director_sr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/genre_sr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/movie_sr.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/directors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/genres.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/movies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProject17.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ed791da9-33fa-4311-8cf5-cd24bac5fb5f" name="Changes" comment="2home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/container.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/model/movie_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/model/movie_md.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dao/movie_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/movie_dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/movie_sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/movie_sr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/directors.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/directors_vw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/genres.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/genres_vw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies_vw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +55,18 @@
       <option name="presentableId" value="Default" />
       <updated>1714092398645</updated>
     </task>
+    <task id="LOCAL-00001" summary="2home">
+      <created>1714755134201</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714755134201</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2home" />
+    <option name="LAST_COMMIT_MESSAGE" value="2home" />
   </component>
 </project>

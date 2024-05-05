@@ -1,6 +1,8 @@
 from marshmallow import Schema, fields
 from sqlalchemy.orm import relationship
 
+from app.database import db
+
 
 class Movie(db.Model):
     __tablename__ = 'movie'

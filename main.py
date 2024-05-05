@@ -2,8 +2,8 @@ from flask import Flask
 from flask_restx import Api
 from app.config import Config
 from app.database import db
-from app.views.directors import directors_ns
-from app.views.movies import movies_ns
+from app.views.directors_vw import directors_ns
+from app.views.movies_vw import movies_ns
 
 
 def create_app(config: Config) -> Flask:
