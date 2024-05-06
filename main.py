@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restx import Api
+
 from app.config import Config
 from app.database import db
 from app.views.directors_vw import directors_ns
@@ -15,7 +16,7 @@ def create_app(config: Config) -> Flask:
 
 def configure_app(application: Flask):
     db.init_app(application)
-    api = Api(app)
+    api = Api(application)
     api.app.config['RESTX_JSON'] = {'ensure_ascii': False, 'indent': 4}
     api.add_namespace(movies_ns)
     api.add_namespace(directors_ns)
@@ -31,8 +32,6 @@ def configure_app(application: Flask):
 # temp = director_schema.loads(temp)
 # print(temp)
 # print(type(temp))
-
-
 
 
 #

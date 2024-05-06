@@ -1,6 +1,8 @@
 from marshmallow import Schema, fields
 from sqlalchemy.orm import relationship
 
+from app.dao.model.director_md import Director
+from app.dao.model.genre_md import Genre
 from app.database import db
 
 

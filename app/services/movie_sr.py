@@ -1,12 +1,12 @@
 class MovieService:
-    def __init__(self, session):
-        self.session = session
+    def __init__(self, movie_dao):
+        self.movie_dao = movie_dao
 
     def get_one(self, mid):
-        pass
+        return self.movie_dao.get_schema(self.movie_dao.get_one(mid))
 
-    def get_all(self):
-        pass
+    def get(self, genre_id, director_id):
+        return self.movie_dao.get_schema(self.movie_dao.get(genre_id, director_id), many=True)
 
     def create(self, data):
         pass
@@ -14,12 +14,12 @@ class MovieService:
     def update(self, data):
         pass
 
-    def delete(self):
-        pass
+    def delete(self, mid):
+        self.movie_dao.delete(mid)
 
-movies = Movie.query
-if genre_id:
-    movies = movies.filter(genre_id == Movie.genre_id)
-if director_id:
-    movies = movies.filter(director_id == Movie.director_id)
-movies = movies.all()
+# movies = Movie.query
+# if genre_id:
+#     movies = movies.filter(genre_id == Movie.genre_id)
+# if director_id:
+#     movies = movies.filter(director_id == Movie.director_id)
+# movies = movies.all()

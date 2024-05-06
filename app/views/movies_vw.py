@@ -1,10 +1,7 @@
 from flask import request
 from flask_restx import Resource, Namespace
 
-from app.database import db
-
-movie_schema = MovieSchema()
-movies_schema = MovieSchema(many=True)
+from app.container import movie_service
 
 movies_ns = Namespace('movies')
 
@@ -14,16 +11,15 @@ class MoviesView(Resource):
     def get(self):
         genre_id = request.args.get('genre_id')
         director_id = request.args.get('director_id')
-
-        return (movies_schema.dump(movies), 200)
+        movies = movie_service.get(genre_id, director_id)
+        return movies, 200
 
 
 @movies_ns.route('/<int:id>')
 class MoviesView(Resource):
     def get(self, id: int):
-        return movie_schema.dump(Movie.query.get(id)), 200
+        return movie_service.get_one(id), 200
 
     def delete(self, id: int):
-        Movie.query.filter(id == Movie.id).delete()
-        db.session.commit()
+        movie_service.delete(id)
         return 200
