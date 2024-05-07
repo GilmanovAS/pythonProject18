@@ -6,17 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ed791da9-33fa-4311-8cf5-cd24bac5fb5f" name="Changes" comment="3home">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/container.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/container.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/director_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/director_dao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/model/director_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/model/director_md.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/model/genre_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/model/genre_md.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao/model/movie_md.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/model/movie_md.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dao/movie_dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao/movie_dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/movie_sr.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/movie_sr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/directors_vw.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/directors_vw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/movies_vw.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/movies_vw.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/instance/test.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/test.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
