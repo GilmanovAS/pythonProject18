@@ -2,7 +2,7 @@ from app.dao.movie_dao import MovieDao
 
 
 class MovieService:
-    def __init__(self, movie_dao:MovieDao):
+    def __init__(self, movie_dao: MovieDao):
         self.movie_dao = movie_dao
 
     def get_one(self, mid):
@@ -16,12 +16,16 @@ class MovieService:
 
     def update(self, mid, data):
         json_data = self.movie_dao.load_schema(data)
+        print(json_data)
         movie = self.movie_dao.get_one(mid)
-        for i in movie:
-            print(i)
-        # movie = **json_data
-        print(type(movie))
-        # self.movie_dao.update(movie)
+        movie.title = json_data['title']
+        movie.description = json_data['description']
+        movie.trailer = json_data['trailer']
+        movie.year = json_data['year']
+        movie.rating = json_data['rating']
+        movie.genre_id = json_data['genre_id']
+        movie.director_id = json_data['director_id']
+        self.movie_dao.update(movie)
 
     def delete(self, mid):
         self.movie_dao.delete(mid)

@@ -1,19 +1,23 @@
 from flask import request
 from flask_restx import Resource, Namespace
 
-
+from app.container import director_service
 
 directors_ns = Namespace('directors')
+
+
 @directors_ns.route('/')
 class DirectorsView(Resource):
     def get(self):
-        pass
-        # return directors_schema.dump(Director.query.all()), 200
+        return director_service.get_all(), 200
 
     def post(self):
-        pass
-        # temp = request.json
-        # new_dir = Director(**temp)
-        # db.session.add(new_dir)
-        # db.session.commit()
-        # return 201
+        data = request.get_json()
+        director_service.create(data)
+        return 201
+
+
+@directors_ns.route('/<int:id>')
+class DirectorsView(Resource):
+    def get(self, id: int):
+        return director_service.get_one(id), 200
